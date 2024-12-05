@@ -1,15 +1,16 @@
+import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../screens/home";
-import Login from "../screens/Inicio/Login";
-import ListaEstatistica from "../screens/Estatisticas/ListaEstatistica";
-import TabelaEstatistica from "../screens/Estatisticas/TabelaEstatistica";
-import AddPeladas from "../screens/Peladas/AddPeladas";
-import BolaRolando from "../screens/Peladas/BolaRolando";
-import CriarPelada from "../screens/Peladas/CriarPelada";
-import MinhasPeladas from "../screens/Peladas/MinhasPeladas";
-import TabelaRolando from "../screens/Peladas/TabelaRolando";
-import TelaGol from "../screens/Peladas/TelaGol";
-import { RootStackParamList } from "@/@types/rootStackParamsList";
+// import Login from "../screens/Inicio/Login";
+// import ListaEstatistica from "../screens/Estatisticas/ListaEstatistica";
+// import TabelaEstatistica from "../screens/Estatisticas/TabelaEstatistica";
+// import AddPeladas from "../screens/Peladas/AddPeladas";
+// import BolaRolando from "../screens/Peladas/BolaRolando";
+// import CriarPelada from "../screens/Peladas/CriarPelada";
+// import MinhasPeladas from "../screens/Peladas/MinhasPeladas";
+// import TabelaRolando from "../screens/Peladas/TabelaRolando";
+// import TelaGol from "../screens/Peladas/TelaGol";
+import { RootStackParamList } from "../@types/rootStackParamsList";
 const { Navigator, Screen } = createNativeStackNavigator<RootStackParamList>();
 
 function AppRoutes() {
