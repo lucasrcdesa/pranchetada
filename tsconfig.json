@@ -8,5 +8,10 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*", "*.tsx", "*.ts"]
+  "include": [
+    "src/**/*",
+    "*.tsx",
+    "*.ts"
+  ],
+  "extends": "expo/tsconfig.base"
 }
