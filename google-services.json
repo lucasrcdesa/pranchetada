@@ -1,0 +1,37 @@
+{
+  "project_info": {
+    "project_number": "581869390218",
+    "project_id": "pranchetinha-3d9ee",
+    "storage_bucket": "pranchetinha-3d9ee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581869390218:android:6bde9c9467d3e587662073",
+        "android_client_info": {
+          "package_name": "com.pranchetinha"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkkN1zsBRhpMj0tQowyKO3w2dpLW0VnGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "581869390218-86ojmouq5najj6q52noo86fqfv4dtbqq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pranchetinha"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

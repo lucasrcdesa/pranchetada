@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>581869390218-86ojmouq5najj6q52noo86fqfv4dtbqq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.581869390218-86ojmouq5najj6q52noo86fqfv4dtbqq</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>581869390218-hef9op8h4b0r4js715b4526h1er2g5ab.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBaWEVU1Nfi6q8VwZC3skueER5sW_uRBXU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>581869390218</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pranchetinha</string>
+	<key>PROJECT_ID</key>
+	<string>pranchetinha-3d9ee</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pranchetinha-3d9ee.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:581869390218:ios:9e4bda3068e36f77662073</string>
+</dict>
+</plist>

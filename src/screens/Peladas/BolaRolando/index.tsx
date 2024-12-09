@@ -124,7 +124,8 @@ const BolaRolando = (props: Props) => {
     setJogadores(updatedJogadores);
   };
 
-  const handleNavigationStart = () => navigation.navigate("TabelaRolando");
+  const handleNavigationStart = () =>
+    navigation.navigate("TabelaRolando", { jogadores: jogadores });
   const handleNavigationGol1 = () =>
     navigation.navigate("TelaGol", { time: time1, fez: 1 });
   const handleNavigationGol2 = () =>

@@ -15,13 +15,21 @@ import React, { useState } from "react";
 import { CaretLeft, Plus, Trash } from "phosphor-react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import styles from "./style";
+import { Jogadores } from "../../../@types/jogadores";
+import { Peladas } from "../../../@types/peladas";
 
 type Props = {};
 
 const CriarPelada = (props: Props) => {
   const navigation = useNavigation();
   const route = useRoute();
-  // const { name } = route.params;
+  const { name, contra, quantos, regra } = route.params;
+  const peladaSelecionada: Peladas = {
+    name: name,
+    contra: contra,
+    quantos: quantos,
+    regra: regra,
+  };
 
   const [arrayJogadores, setArrayJogadores] = useState<Jogadores[]>([]);
   const [jogadoresName, setJogadoresName] = useState("");
@@ -49,8 +57,23 @@ const CriarPelada = (props: Props) => {
       alert("Adicione um jogador antes de começar");
       return;
     }
-
-    navigation.navigate("BolaRolando", { jogadores: arrayJogadores });
+    if (peladaSelecionada.quantos * 2 > arrayJogadores.length) {
+      alert(
+        ` O numero de jogadores dessa pelada deve ser no mínimo ${
+          peladaSelecionada.quantos * 2
+        }`
+      );
+      return;
+    }
+    peladaSelecionada.contra
+      ? navigation.navigate("BolaRolandoContra", {
+          jogadores: arrayJogadores,
+          pelada: peladaSelecionada,
+        })
+      : navigation.navigate("BolaRolando", {
+          jogadores: arrayJogadores,
+          pelada: peladaSelecionada,
+        });
   };
   const handleDeletePlayer = (index: number) => {
     setArrayJogadores(arrayJogadores.filter((_, i) => i !== index));

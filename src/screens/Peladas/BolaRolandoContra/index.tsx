@@ -62,12 +62,12 @@ const BolaRolandoContra = (props: Props) => {
   const [placar1, setPlacar1] = useState(0);
   const [placar2, setPlacar2] = useState(0);
 
-  //   const { jogadores }: { jogadores: Jogadores[] } = route.params;
+  const { jogadores }: { jogadores: Jogadores[] } = route.params;
   useEffect(() => {
-    const newTime1: string[] = [];
-    const newTime2: string[] = [];
+    const newTime1: Jogadores[] = [];
+    const newTime2: Jogadores[] = [];
 
-    array.forEach((jogador, index) => {
+    jogadores.forEach((jogador, index) => {
       if (index % 2 === 0) {
         newTime1.push(jogador);
       } else {
@@ -77,8 +77,8 @@ const BolaRolandoContra = (props: Props) => {
     setTime1(newTime1);
     setTime2(newTime2);
   }, []);
-  const [time1, setTime1] = useState<string[]>([]);
-  const [time2, setTime2] = useState<string[]>([]);
+  const [time1, setTime1] = useState<Jogadores[]>([]);
+  const [time2, setTime2] = useState<Jogadores[]>([]);
   //   const [time3, setTime3] = useState(jogadores.slice(10, 15));
   //   const [time4, setTime4] = useState(jogadores.slice(15, 20));
   //   const [sobra, setSobra] = useState(jogadores.slice(20));
@@ -154,13 +154,20 @@ const BolaRolandoContra = (props: Props) => {
   //     navigation.navigate("TelaGol", { time: time1, fez: 1 });
   //   const handleNavigationGol2 = () =>
   //     navigation.navigate("TelaGol", { time: time2, fez: 2 });
-  //   const handleBack = () => {
-  //     navigation.goBack();
-  //   };
-  const renderLista = ({ item, index }: { item: string; index: number }) => {
+  const handleBack = () => {
+    navigation.goBack();
+  };
+
+  const handleNavigationStart = () =>
+    navigation.navigate("TabelaRolando", { jogadores: jogadores });
+  const handleNavigationGol1 = () =>
+    navigation.navigate("TelaGol", { time: time1, fez: 1 });
+  const handleNavigationGol2 = () =>
+    navigation.navigate("TelaGol", { time: time2, fez: 2 });
+  const renderLista = ({ item, index }: { item: Jogadores; index: number }) => {
     return (
       <View style={styles.touchable}>
-        <Text style={styles.textList}>{item}</Text>
+        <Text style={styles.textList}>{item.name}</Text>
         <TouchableOpacity
         // onPress={() => handleClickDescansar(index)}
         ></TouchableOpacity>
@@ -174,7 +181,7 @@ const BolaRolandoContra = (props: Props) => {
         <View style={styles.backContainer}>
           <TouchableOpacity
             onPress={() => {
-              //   handleBack();
+              handleBack();
             }}
           >
             <CaretLeft color="white" />
@@ -186,9 +193,7 @@ const BolaRolandoContra = (props: Props) => {
           source={require("../../../assets/soccer.png")}
         />
         <View style={styles.addContainer}>
-          <TouchableOpacity
-          //   onPress={handleNavigationStart}
-          >
+          <TouchableOpacity onPress={handleNavigationStart}>
             <ChartBar color="#aa2834" />
           </TouchableOpacity>
         </View>
@@ -248,16 +253,10 @@ const BolaRolandoContra = (props: Props) => {
       </View>
       <View style={styles.textProx}>
         <View style={styles.gol}>
-          <TouchableOpacity
-            style={styles.but}
-            //   onPress={handleNavigationGol1}
-          >
+          <TouchableOpacity style={styles.but} onPress={handleNavigationGol1}>
             <Text style={styles.textProxBla}>GOOOL!</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.but}
-            //   onPress={handleNavigationGol2}
-          >
+          <TouchableOpacity style={styles.but} onPress={handleNavigationGol2}>
             <Text style={styles.textProxBla}>GOOOL!</Text>
           </TouchableOpacity>
         </View>

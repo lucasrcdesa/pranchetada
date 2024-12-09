@@ -28,7 +28,8 @@ const array: string[] = [
 
 const MinhasPeladas = (props: Props) => {
   const route = useRoute();
-  const { time }: { time: Jogadores[] } = route.params;
+  const { time, fez }: { time: Jogadores[]; fez: number } = route.params;
+  const timeFez = fez;
 
   const navigation = useNavigation();
 

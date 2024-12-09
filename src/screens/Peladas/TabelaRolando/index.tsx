@@ -8,13 +8,16 @@ import {
 } from "react-native";
 import React from "react";
 import { CaretLeft } from "phosphor-react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { Jogadores } from "../../../@types/jogadores";
 
 type Props = {};
 
 const TabelaRolando = (props: Props) => {
   const navigation = useNavigation();
   const arrayJogadores = ["Lucas", "Pedro"];
+  const route = useRoute();
+  const { jogadores }: { jogadores: Jogadores[] } = route.params;
   const handleBack = () => {
     navigation.goBack();
   };
@@ -22,13 +25,13 @@ const TabelaRolando = (props: Props) => {
   const handleNavigationRolando = () => {
     navigation.pop(3);
   };
-  const renderList = ({ item }: { item: string }) => {
+  const renderList = ({ item }: { item: Jogadores }) => {
     return (
       <View style={styles.text}>
-        <Text>Lucas </Text>
-        <Text>25</Text>
-        <Text>16</Text>
-        <Text>28</Text>
+        <Text>{item.name} </Text>
+        <Text>{item.gols}</Text>
+        <Text>{item.assists}</Text>
+        <Text>{item.vitorias}</Text>
       </View>
     );
   };
@@ -62,7 +65,7 @@ const TabelaRolando = (props: Props) => {
           </View>
 
           <FlatList
-            data={arrayJogadores}
+            data={jogadores}
             renderItem={renderList}
             keyExtractor={(_, index) => index.toString()}
             ItemSeparatorComponent={() => <View style={{ height: 5 }} />}

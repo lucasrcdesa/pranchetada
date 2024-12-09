@@ -20,8 +20,8 @@ const MinhasPeladas = (props: Props) => {
   const navigation = useNavigation();
   //   const [peladasList, setPeladasList] = useState<Peladas[]>([]);
   const array: Peladas[] = [
-    { name: "peladaBB", contra: false, quantos: 5, regra: "1" },
-    { name: "peladaBB", contra: false, quantos: 5, regra: "1" },
+    { name: "pelada CONTRA", contra: true, quantos: 5, regra: "1" },
+    { name: "pelada PROX", contra: false, quantos: 5, regra: "1" },
   ];
 
   //   useEffect(() => {
@@ -45,13 +45,24 @@ const MinhasPeladas = (props: Props) => {
     navigation.goBack();
   };
   const handleNavigationAdd = () => navigation.navigate("AddPeladas");
-  const handleNavigationStart = (name: string) =>
-    navigation.navigate("CriarPelada", { name });
+  const handleNavigationStart = (
+    name: string,
+    contra: boolean,
+    quantos: number,
+    regra: string
+  ) => navigation.navigate("CriarPelada", { name, contra, quantos, regra });
   const renderLista = ({ item, index }: { item: Peladas; index: number }) => {
     return (
       <TouchableOpacity
         style={styles.touchable}
-        onPress={() => handleNavigationStart(item.name)}
+        onPress={() =>
+          handleNavigationStart(
+            item.name,
+            item.contra,
+            item.quantos,
+            item.regra
+          )
+        }
       >
         <Text style={styles.textList}>{item.name}</Text>
       </TouchableOpacity>
