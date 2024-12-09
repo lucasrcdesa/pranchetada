@@ -20,7 +20,7 @@ const Home = (props: Props) => {
     navigation.navigate("ListaEstatistica");
   };
   const handleNavigatePeladas = () => {
-    navigation.navigate("MinhasPeladas");
+    navigation.navigate("BolaRolandoContra");
   };
 
   return (

@@ -11,6 +11,7 @@ import MinhasPeladas from "../screens/Peladas/MinhasPeladas";
 import TabelaRolando from "../screens/Peladas/TabelaRolando";
 import TelaGol from "../screens/Peladas/TelaGol";
 import { RootStackParamList } from "../@types/rootStackParamsList";
+import BolaRolandoContra from "../screens/Peladas/BolaRolandoContra";
 const { Navigator, Screen } = createNativeStackNavigator<RootStackParamList>();
 
 function AppRoutes() {
@@ -26,6 +27,7 @@ function AppRoutes() {
       <Screen name="Login" component={Login} />
       <Screen name="ListaEstatistica" component={ListaEstatistica} />
       <Screen name="TabelaEstatistica" component={TabelaEstatistica} />
+      <Screen name="BolaRolandoContra" component={BolaRolandoContra} />
     </Navigator>
   );
 }

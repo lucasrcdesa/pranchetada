@@ -17,13 +17,6 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import styles from "./style";
 
 type Props = {};
-export interface Jogadores {
-  name: string;
-  gols: number;
-  assists: number;
-  vitorias: number;
-  cadastrado: boolean;
-}
 
 const CriarPelada = (props: Props) => {
   const navigation = useNavigation();
